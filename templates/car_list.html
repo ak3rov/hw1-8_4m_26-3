@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car List</title>
+</head>
+<body>
+  <style>
+   body {
+
+    color: coral;
+     font-size: 27px;
+   }
+   a {
+     text-decoration: none;
+     color: black;
+   }
+   button {
+     margin-left: 260px;
+     padding: 5px;
+     background: blanchedalmond;
+     border-radius: 9px;
+   }
+   button:hover {
+     background: linear-gradient(0.25turn, #FF4F39, #3f87a6, #f69d3c);
+     border: none;
+    color: #FFFFFF;
+    padding: 15px;
+     transition: 0.5s;
+     border-radius: 240px;
+   }
+   h2:hover {
+     background: linear-gradient(115.11deg, #FFBC2A 16.38%, #f69d3c 95.45%);
+    border: none;
+    color: #FFFFFF;
+    padding: 15px 40px;
+     transition: 0.5s;
+   }
+   img:hover{
+     margin: 20px;
+     transition: 1s;
+     border: black solid 5px;
+   }
+   hr{
+     width: 100%;
+     height: 3px;
+     background: black;
+   }
+   p{
+     font-family: "Segoe Script";
+     margin-left: 270px;
+   }
+  </style>
+<h2 align="center">Car store</h2>
+<button><a href="/admin/">На админку</a></button>
+<div>
+  <ul>
+    {% for i in car_object %}
+    <li>
+      <h3>{{i.title}}</h3>
+      <hr>
+      <img src="{{i.image.url}}" alt="" width="700" height="auto">
+
+      <p><b>{{i.cost}}$</b></p>
+      <button><a href="/car_list/{{i.id}}">Больше здесь</a></button>
+      <hr>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+</body>
+</html>
