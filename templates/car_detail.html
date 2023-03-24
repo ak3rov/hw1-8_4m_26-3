@@ -1,50 +1,48 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Car Detail</title>
+    <link rel="stylesheet" href="{% static 'css/detail_css.css' %}">
 </head>
 <body>
-<style>
-    body {
-        color: cyan;
-        font-size: 52px;
-        font-family: "Ravie";
-    }
-    h1{
-        font-family: "Marlett", "Harrington", "Cooper Black", "Calibri", Verdana, Arial, sans-serif;
-    }
+{% include 'header.html' %}
+<button type="button" class="btn btn-outline-light">
+    <a href="/car_list/" style="text-decoration: none; color: black">На список автомобилей</a></button>
+<div class="container">
+    <div class="post">
+        <div class="post-image">
+            <img src="{{car_detail.image.url}}">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <h1>{{car_detail.title}}</h1>
+                <div class="post-meta">
+                    <time class="cost">{{car_detail.cost}} сом</time>
+                    <span class="type">{{car_detail.car_type}}</span>
+                    <span class="create_date">{{car_detail.created_date}}</span>
+                    <p><b>{{car_detail.specifications}}</b></p>
+                    <p><b>Модельный год: {{car_detail.model_year}}</b></p>
+                    <p><b>Страна изготовитель: {{car_detail.manufacturing_country}}</b></p>
+                    <br>
+                    <br>
 
-    a {
-        text-decoration: none;
-        color:black;
-    }
-    button {
-        padding: 13px;
-        background: #f69d3c;
-        border-radius: 11px;
-    }
-    button:hover{
-     background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
-     border: none;
-    color: #FFFFFF;
-    padding: 15px 20px;
-     transition: 0.5s;
-     border-radius: 250px;
-    }
-</style>
-<button><a href="/car_list/">На список всех машин</a></button>
-<div>
-<center>
-    <h1>{{car_detail.title}}</h1>
-    <img src="{{car_detail.image.url}}" alt="" width="700" height="auto">
-    <p><i>Последнее действие: {{car_detail.created_data}}</i></p>
-    <h2>Тип кузова: {{car_detail.car_type}}</h2>
-    <p>{{car_detail.description}}</p>
-    <h2>Цена: {{car_detail.cost}}$</h2>
-    <p><i>Остальное о машине здесь</i></p>
-    <iframe src="{{car_detail.video}}" frameborder="0" width="800" height="400"></iframe>
-</center>
+                </div>
+            </div>
+            <p>{{car_detail.description}}
+            </p>
+        </div>
+    </div>
 </div>
+<center>
+<table border="5">
+    <tr>
+        <td><iframe src="{{car_detail.video}}" frameborder="0" width="640" height="420"></iframe></td>
+    </tr>
+</table>
+</center>
+
+{% include 'footer.html' %}
 </body>
 </html>

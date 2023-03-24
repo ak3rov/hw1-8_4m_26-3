@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from . import models
 
-def post_view(request):
-    post = models.Post.objects.all()
-    return render(request, 'index.html', {'post_obj': post})
+
+def book_view(request):
+    book = models.Book.objects.all()
+    return render(request, 'index.html', {'book': book})
