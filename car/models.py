@@ -10,16 +10,16 @@ class CarShop(models.Model):
         ("Купе", "Купе"),
         ("Кабриолет", "Кабриолет"),
     )
-    title = models.CharField("Название модели", max_length=100)
-    description = models.TextField("Описание авто")
+    title = models.CharField("Model Name", max_length=100)
+    description = models.TextField("About auto")
     image = models.ImageField(upload_to='')
     car_type = models.CharField(max_length=100, choices=CAR_TYPE)
     created_date = models.DateTimeField(auto_now_add=True)
     cost = models.PositiveIntegerField()
     video = models.URLField()
-    specifications = models.TextField("Характеристика", null=True)
-    model_year = models.TextField("Год сборки", null=True)
-    manufacturing_country = models.TextField("Страна", null=True)
+    specifications = models.TextField("Characteristic", null=True)
+    model_year = models.TextField("Build year", null=True)
+    manufacturing_country = models.TextField("Country", null=True)
 
     def __str__(self):
         return self.title

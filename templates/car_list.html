@@ -9,7 +9,7 @@
 <body>
 {% include 'header.html' %}
 <center>
-    <h1>Каталог моделей</h1>
+    <h1>Catalog</h1>
 <br><br>
 {% for i in car_object %}
 <div class="card" style="width: 18rem;">
@@ -17,7 +17,7 @@
   <div class="card-body">
     <h5 class="card-title">{{i.title}}</h5>
     <p class="card-text">{{i.description}}</p>
-    <a href="/car_list/{{i.id}}" class="btn btn-primary">Подробнее</a>
+    <a href="/car_list/{{i.id}}" class="btn btn-primary">More</a>
   </div>
 </div>
 <br><br><br><br>

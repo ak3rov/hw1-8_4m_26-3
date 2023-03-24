@@ -1,16 +1,16 @@
 esources
 .footer-basic {
   padding:40px 0;
-  background-color:#ffffff;
-  color:#4b4c4d;
+  background-color:#686;
+  color:#975;
 }
 
 .footer-basic ul {
   padding:0;
   list-style:none;
   text-align:center;
-  font-size:18px;
-  line-height:1.6;
+  font-size:15px;
+  line-height:1.8;
   margin-bottom:0;
 }
 
@@ -30,21 +30,21 @@ esources
 
 .footer-basic .social {
   text-align:center;
-  padding-bottom:25px;
+  padding-bottom:22px;
 }
 
 .footer-basic .social > a {
-  font-size:24px;
-  width:40px;
-  height:40px;
-  line-height:40px;
+  font-size:28px;
+  width:46px;
+  height:46px;
+  line-height:46px;
   display:inline-block;
   text-align:center;
-  border-radius:50%;
-  border:1px solid #ccc;
-  margin:0 8px;
+  border-radius:43%;
+  border:1px solid #dddd;
+  margin:0 6px;
   color:inherit;
-  opacity:0.75;
+  opacity:0.67;
 }
 
 .footer-basic .social > a:hover {
@@ -52,9 +52,9 @@ esources
 }
 
 .footer-basic .copyright {
-  margin-top:15px;
+  margin-top:18px;
   text-align:center;
-  font-size:13px;
-  color:#aaa;
+  font-size:16px;
+  color:#dddd;
   margin-bottom:0;
 }
