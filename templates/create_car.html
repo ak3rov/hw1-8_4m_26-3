@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add-car</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+</head>
+<body>
+<style>
+    * {
+   box-sizing: border-box;
+}
+
+.air {
+  max-width: 339px;
+  margin: 47px auto 0;
+  padding: 17px;
+  background: #E4E3DF;
+  font-family: 'Webdings', sans-serif;
+}
+.form-inner {
+  border: 2px solid #909090;
+  border-bottom: none;
+}
+.stripes-block {
+  position: relative;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: repeating-linear-gradient(-45deg, #E4E3DF, #E4E3DF 5px, #909090 6px, #909090 8px);
+  border-bottom: 2px solid #909090;
+}
+.stripes-block:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 6px;
+  margin-left: -4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fffffe;
+  box-shadow: 0 0 0 1px #000000, 0 0 0 12px #9c88;
+}
+.form-row {
+  position: relative;
+  padding: 11px;
+  border-bottom: 2px solid #9876;
+}
+.form-row label {
+  display: block;
+}
+.form-row input {
+  display: block;
+  width: 100%;
+  padding: 0;
+  line-height: 33px;
+  border-width: 0;
+  background: #ddd;
+}
+.form-row textarea {
+  width: 297px;
+  margin-bottom:38px;
+  padding: 0;
+  outline: 0;
+  line-height: 38px;
+  background: transparent url(https://aniyuki.com/wp-content/uploads/2021/08/aniyuki-roronoa-zoro-79.jpg) bottom left repeat-x;
+  background-size: 12px 44px;
+  letter-spacing: 0.2em;
+  background-attachment: local;
+  background-repeat: repeat;
+  border-width: 0;
+  resize: none;
+}
+textarea {
+    width: 297px;
+}
+.form-row-icon {
+  position: relative;
+  border-bottom: 2px solid #9876;
+}
+.form-row-icon .fa {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 43px;
+  height: 43px;
+  line-height: 37px;
+  text-align: center;
+  background: #9876;
+  color: #E4E3DF;
+  border-bottom: 2px solid;
+}
+.form-row-icon input {
+  display: block;
+  width: 100%;
+  padding: 0 12px 0 50px;
+  line-height: 37px;
+  box-sizing: border-box;
+  border-width: 0;
+  background: #E4E3DF;
+}
+.form-row-icon .fa-paper-plane-o {
+  border-bottom-color: #9876;
+  cursor: pointer;
+}
+.form-row-icon input[type="submit"] {
+  cursor: pointer;
+}
+
+
+</style>
+
+<form action="/create_car/" class="air" method="post" enctype="multipart/form-data">
+<div class="form-inner">
+<div class="stripes-block"></div>
+<div class="form-row">
+<label for="name">Add auto</label>
+<input type="text" id="name" required>
+</div>
+<h3>Add auto</h3>
+{% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Add auto">
+<div class="form-row-icon">
+<input type="submit" value="">
+</div>
+</div>
+</form>
+
+</body>
+</html>

@@ -9,7 +9,25 @@
 <body>
 {% include 'header.html' %}
 <button type="button" class="btn btn-outline-light">
-    <a href="/car_list/" style="text-decoration: none; color: black">To list of auto</a></button>
+    <a href="/car_list/" style="text-decoration: none; color: black">To list of auto</a>
+</button>
+
+<button type="button" class="btn btn-outline-info">
+    <a href="/car_list/{{car_detail.id}}/delete/" style="text-decoration: none; color: black">Delete</a>
+</button>
+
+<button type="button" class="btn btn-outline-info">
+    <a href="/car_list/{{car_detail.id}}/update/" style="text-decoration: none; color: black">Edit</a>
+</button>
+
+<button type="button" class="btn btn-outline-info">
+    <a href="/create_car/" style="text-decoration: none; color: black">Add</a>
+</button>
+
+<button type="button" class="btn btn-outline-info">
+    <a href="/car_list/{{car_detail.id}}/reviews/" style="text-decoration: none; color: black">Leave review</a>
+</button>
+
 <div class="container">
     <div class="post">
         <div class="post-image">
@@ -23,8 +41,8 @@
                     <span class="type">{{car_detail.car_type}}</span>
                     <span class="create_date">{{car_detail.created_date}}</span>
                     <p><b>{{car_detail.specifications}}</b></p>
-                    <p><b>Модельный год: {{car_detail.model_year}}</b></p>
-                    <p><b>Страна изготовитель: {{car_detail.manufacturing_country}}</b></p>
+                    <p><b>Год модели: {{car_detail.model_year}}</b></p>
+                    <p><b>Изготовитель: {{car_detail.manufacturing_country}}</b></p>
                     <br>
                     <br>
 
