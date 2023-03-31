@@ -1,30 +1,120 @@
-{% load static %}
+ъ{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Car List</title>
-    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <title>Cars</title>
+    <link rel="stylesheet" href="{%  static 'css/style1.css' %}">
 </head>
 <body>
-{% include 'header.html' %}
-<center>
-    <h1>Catalog</h1>
-<br><br>
-{% for i in car_object %}
-<div class="card" style="width: 18rem;">
-  <img src="{{i.image.url}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{i.title}}</h5>
-    <p class="card-text">{{i.description}}</p>
-    <a href="/car_list/{{i.id}}" class="btn btn-primary">More</a>
-  </div>
-</div>
-<br><br><br><br>
-<hr><hr>
-{% endfor %}
-</center>
+{%  include 'header.html' %}
 
+<div class="d-flex justify-content-between mb-1">
+    <span class="inventory-count" aria-live="polite" aria-atomic="true">5<!-- --> listings
+    </span><div class="srp-sort-by size-14" data-tracking-parent="inventory_sort">
+    <label for="sort-by" class="d-flex align-items-center justify-content-end mb-0">
+        <span class="mr-0_25">Sort by:</span>
+        <span class="styled-select chevron">
+            <select data-tracking-id="select_sort_by" data-no-refresh="false" id="sort-by" name="sort-by" class="usurp-select size-14 border-0 text-gray-darker font-weight-bold text-left">
+                <option selected="" class="" value="[object Object]">Best Match</option>
+                <option class="" value="bestDeal:desc">Best Deals</option>
+                <option class="" value="distance:asc">Distance</option>
+                <option class="" value="price:asc">Price: Low to High</option>
+                <option class="" value="price:desc">Price: High to Low</option>
+                <option class="" value="publishDate:desc">Date Listed: Newest First</option>
+                <option class="" value="publishDate:asc">Date Listed: Oldest First</option>
+                <option class="" value="modelYear:desc">Year: Newest First</option>
+                <option class="" value="modelYear:asc">Year: Oldest First</option>
+            </select>
+        </span>
+    </label>
+</div>
+</div>
+<br>
+<div class="container content">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="list-group">
+				<a href="#" class="list-group-item">Lexus</a>
+				<a href="#" class="list-group-item">BMW</a>
+				<a href="#" class="list-group-item">Toyota</a>
+				<a href="#" class="list-group-item">Land Rover</a>
+				<a href="#" class="list-group-item">Mercedes</a>
+			</div>
+		</div>
+
+		        <div class="col-md-8">
+                <div class="col-md-8 products">
+	                <div class="row">
+                        <div class="col-sm-4">
+                            {% for i in object_list %}
+                                <div class="product-wrapper">
+		        	            <div class="product">
+				                    <div class="product-img">
+					                <a href="#"><img src="{{i.image.url}}" class="card-img-top" alt="..."></a>
+				                    </div>
+				                 <h5 class="product-title">{{i.title}}</h5>
+                                <p class="product-desc">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+                                <p class="product-price">{{ i.cost }} $ </p>
+                                <a href="/car_list/{{ i.id }}" class="btn btn-primary"> Подробнее </a>
+                                    <a href="/car_list/{{i.id}}/feedback/" class="btn btn-primary"> Оставить отзыв </a>
+			                    </div>
+                                </div>
+                            {% endfor %}
+		                 </div>
+                    </div>
+                </div>
+                </div>
+	</div>
+</div>
 {% include 'footer.html' %}
 </body>
 </html>
+
+
+
+
+{##}
+{#{% for i in car_object %}#}
+{#<div class="card" style="width: 18rem;">#}
+{#  <img src="{{i.image.url}}" class="card-img-top" alt="...">#}
+{#  <div class="card-body">#}
+{#    <h5 class="card-title">{{i.title}}</h5>#}
+{#    <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>#}
+{#    <a href="/car_list/{{ i.id }}" class="btn btn-primary"> Подробнее </a>#}
+{#  </div>#}
+{#</div>#}
+{#{% endfor %}#}
+{#{% include 'footer.html' %}#}
+{#</body>#}
+{#</html>#}
+
+
+
+{# <button><a href="/admin/">На страницу админа</a></button>#}
+{#<div>#}
+{#    <h1> qwerty</h1>#}
+{#    <h2 class="qwerty"> qwerty</h2>#}
+{#    <h3> qwerty</h3>#}
+{#    <h4> qwerty</h4>#}
+{#    <h5> qwerty</h5>#}
+{#    <h6> qwerty</h6>#}
+{#    <p>qwerty</p>#}
+{#    <url>#}
+{#        <ol>#}
+{#            {% for i in car_object %}#}
+{#            <li>#}
+{#                <h2><i>{{i.title}}</i></h2>#}
+{#                <img src="{{i.image.url}}" alt="" width=280 height=200>#}
+{#                <p><b>{{ i.cost }}</b></p>#}
+{#                <button><a href="/car_list/{{ i.id }}">Подробнее</a></button>#}
+{##}
+{#                </li>#}
+{#            {% endfor %}#}
+{#        </ol>#}
+{#    </url>#}
+{#</div>#}
+{#{% include 'footer.html' %}#}
+{#</body>#}
+{#</html>#}

@@ -1,12 +1,14 @@
 from django import forms
 from . import models
 
+
 class CarForm(forms.ModelForm):
     class Meta:
-        model = models.CarShop
+        model = models.Car
         fields = "__all__"
 
-class ReviewsForm(forms.ModelForm):
+
+class FeedbackForm(forms.ModelForm):
     class Meta:
-        model = models.CarShop
-        fields = ["reviews"]
+        model = models.CarReview
+        fields = "__all__"
