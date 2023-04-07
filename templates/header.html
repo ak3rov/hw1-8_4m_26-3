@@ -9,7 +9,7 @@
   </div>
 </nav>
   <div class="container-fluid">
-    <a class="navbar-brand" href="/car_list/">Главная</a>
+    <a class="navbar-brand" href="/">Главная</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,6 +33,10 @@
             Выпадающий список
           </a>
 
+             <li class="nav-item">
+          <a class="nav-link" href="/parser_film/">Films</a>
+        </li>
+
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">О нас</a></li>
             <li><a class="dropdown-item" href="#">Галерея</a></li>
@@ -42,9 +46,9 @@
           </ul>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
-        <button class="btn btn-outline-success" type="submit">Поиск</button>
+      <form action="{% url 'search' %}" method="GET" class="d-flex" role="search">
+        <input type="search" type="text" name="q" class="form-control me-2"  placeholder="Поиск" aria-label="Поиск">
+        <button  type="submit" class="btn btn-outline-success">Поиск</button>
       </form>
     </div>
   </div>
