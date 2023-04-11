@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clothes</title>
+</head>
+<body>
+<center>
+  <h1><i>Список одежды</i></h1>
+</center>
+<div>
+    <ol>
+        {% for i in object_list %}
+            <li>
+            <h1>{{ i.name }}</h1>
+            <h2><a href="/clothes/{{ i.id }}">More</a></h2>
+            </li>
+        {% endfor %}
+    </ol>
+</div>
+</body>
+</html>
